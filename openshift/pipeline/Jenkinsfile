@@ -1,0 +1,6 @@
+node('front') {
+  stage 'build'
+  openshiftBuild(buildConfig: 'front', showBuildLogs: 'true')
+  stage 'deploy'
+  openshiftDeploy(deploymentConfig: 'front')
+}
